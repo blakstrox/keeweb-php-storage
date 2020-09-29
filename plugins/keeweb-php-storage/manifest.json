@@ -1,7 +1,7 @@
 {
   "version": "0.0.1",
   "manifestVersion": "0.1.0",
-  "name": "local-server",
+  "name": "keeweb-php-storage",
   "description": "Keeweb local server",
   "author": {
     "name": "Vishnu",
