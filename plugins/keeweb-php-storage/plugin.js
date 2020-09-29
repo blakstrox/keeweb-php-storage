@@ -11,7 +11,6 @@ const ModalView = require('views/modal-view');
 const Alerts = require('comp/ui/alerts');
 const Locale = require('util/locale');
 const OpenView = require('views/open-view');
-
 const KeewebPhpStorage = StorageBase.extend({
     name: 'keewebPhpStorage',
     icon: 'lock',
