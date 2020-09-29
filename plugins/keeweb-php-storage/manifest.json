@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "manifestVersion": "0.1.0",
+  "name": "local-server",
+  "description": "Keeweb local server",
+  "author": {
+    "name": "Vishnu",
+    "email": "vishnu@sinealpha.com",
+    "url": "https://sinealpha.com"
+  },
+  "resources": {
+    "js": true
+  },
+  "license": "MIT",
+  "url": "https://sinealpha.com/plugin",
+  "publicKey": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA7WowaMpxDJPhcTH41PXRgtkznztknDfdP3qiolC8PTx4dZBZcf87jvBJKk6RgPeKi5RWqTiUU3g9BGbCg3gxObl8IrAwBiEZbKS/+VEi+sQhoaScfypH5zzmwzFZalP2SestIRZ1S1rdD+TKfEZ3isHasZNx5ZiCRWuvV7mRTb+UG4/6mmI5afVwyAPxzshwLtfaauAHtmneVBFv/yFh/suJbVWjOlru/P95/CZTXojzl0ENvOs9fplgjgxFLquCXT6oMBY6nGIsrMTwQBNA0di+OAvDjEQTGflfJOgQvm7yu1SiKWefvBqtaqg/ONOA491qIMz3m8cdOjPg9JPyAQIDAQAB"
+}
