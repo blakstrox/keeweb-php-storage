@@ -1,5 +1,5 @@
 /**
- * KeeWeb plugin: local-server
+ * KeeWeb plugin: keeweb-php-storage
  * @author Vishnu
  * @license MIT
  */
@@ -12,8 +12,8 @@ const Alerts = require('comp/ui/alerts');
 const Locale = require('util/locale');
 const OpenView = require('views/open-view');
 
-const LocalServerStorage = StorageBase.extend({
-    name: 'localServerStorage',
+const KeewebPhpStorage = StorageBase.extend({
+    name: 'keewebPhpStorage',
     icon: 'lock',
     enabled: true,
     uipos: 100,
@@ -218,16 +218,16 @@ const LocalServerStorage = StorageBase.extend({
 });
 
 
-BaseLocale.localServerStorage = 'Local Server Storage';
+BaseLocale.keewebPhpStorage = 'Local Server Storage';
 BaseLocale.serverAccessPrompt = 'Enter password for the server file access';
 BaseLocale.serverPassword = 'Server Password';
 
-Storage.localServerStorage = new LocalServerStorage();
+Storage.keewebPhpStorage = new keewebPhpStorage();
 
 const openViewGetDisplayedPath = OpenView.prototype.getDisplayedPath;
 OpenView.prototype.getDisplayedPath = function(fileInfo) {
     const storage = fileInfo.get('storage');
-    if (storage === 'localServerStorage') {
+    if (storage === 'keewebPhpStorage') {
         return fileInfo.get('path');
     }
     return openViewGetDisplayedPath.apply(this);
@@ -235,7 +235,7 @@ OpenView.prototype.getDisplayedPath = function(fileInfo) {
 
 const openViewGetOpenFile = OpenView.prototype.openFile;
 OpenView.prototype.openFile = function() {
-    if (this.model.settings.get('localServerStorage')) {
+    if (this.model.settings.get('keewebPhpStorage')) {
         this.openKeyFileFromLocalServer();
         return;
     }
@@ -244,7 +244,7 @@ OpenView.prototype.openFile = function() {
 
 const openViewOpenKeyFile = OpenView.prototype.openKeyFile;
 OpenView.prototype.openKeyFile = function(e) {
-    if (this.model.settings.get('localServerStorage')) {
+    if (this.model.settings.get('keewebPhpStorage')) {
         this.openKeyFileFromLocalServer();
         return;
     }
@@ -252,13 +252,13 @@ OpenView.prototype.openKeyFile = function(e) {
 };
 
 OpenView.prototype.openKeyFileFromLocalServer = function() {
-    const icon = this.$el.find('.open__icon-storage[data-storage=localServerStorage]');
+    const icon = this.$el.find('.open__icon-storage[data-storage=keewebPhpStorage]');
     icon.trigger('click');
 };
 
 module.exports.uninstall = function() {
-    delete BaseLocale.localServerStorage;
-    delete Storage.localServerStorage;
+    delete BaseLocale.keewebPhpStorage;
+    delete Storage.keewebPhpStorage;
     DetailsView.prototype.getDisplayedPath = openViewGetDisplayedPath;
     DetailsView.prototype.openFile = openViewGetOpenFile;
     DetailsView.prototype.openKeyFile = openViewOpenKeyFile;
